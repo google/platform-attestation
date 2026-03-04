@@ -1,6 +1,6 @@
 # Titan Root of Trust
 
-This folder contains information to validate the certificates of a Google Titan
+This directory contains information to validate the certificates of a Google Titan
 root of trust.
 
 ## Information about the Titan RoT
@@ -20,15 +20,15 @@ Each stage launches the next stage in the list.
 The Titan TPM certificate chain consists of the following keys/certificates:
 
 1.  Google Root CA Keys
-2.  DICE Device ID Certificate
-3.  DICE Alias Key Certificate
+2.  Device ID Certificate
+3.  Alias Key Certificate
 4.  TPM Firmware-limited EK (FEK) Certificate
 
 Each certificate in the chain is signed by the key corresponding to the
 certificate in the item above.
 
 ```
-Google Root CA Key -> DICE Device ID Key -> DICE Alias Key -> TPM FEK
+Google Root CA Key -> Device ID Key -> Alias Key -> TPM FEK
 ```
 
 ## Certificate Details
@@ -129,10 +129,10 @@ Mixing acceptable values between generations is not valid.
 
 #### Google Root CA Keys
 
-Google maintains Root CA keys authorized to sign DICE Device ID Certificates for
+Google maintains Root CA keys authorized to sign Device ID Certificates for
 Titan root of trust devices. The set of Root CA public keys is in `TBD`.
 
-#### DICE Device ID Certificate
+#### Device ID Certificate
 
 | **Byte Offset** | **Type**    | **Name**       | **Description**
 | --------------- | ----------- | -------------- | ----------------------------
@@ -149,14 +149,14 @@ Titan root of trust devices. The set of Root CA public keys is in `TBD`.
 | 0x38            | `U16`       | HW Category    | Category of the Titan RoT
 | 0x3A            | `U16`       | Size           | Constant value `128`
 | 0x3C            | `U32`       | Bootloader Tag | Tag of bootloader firmware
-| 0x40            | `P256_INT`  | Public Key x   | ECP256 Public Key x component
-| 0x60            | `P256_INT`  | Public Key y   | ECP256 Public Key y component
-| 0x80            | `P256_INT`  | Signature r    | ECDSA Signature r component
-| 0xA0            | `P256_INT`  | Signature s    | ECDSA Signature s component
+| 0x40            | `P256_INT`  | Public Key x   | P256 Public Key x component
+| 0x60            | `P256_INT`  | Public Key y   | P256 Public Key y component
+| 0x80            | `P256_INT`  | Signature r    | P256 Signature r component
+| 0xA0            | `P256_INT`  | Signature s    | P256 Signature s component
 
 Total size: 0xC0 (192)
 
-#### DICE Alias Key Certificate
+#### Alias Key Certificate
 
 | **Byte Offset** | **Type**    | **Name**       | **Description**
 | --------------- | ----------- | -------------- | ----------------------------
@@ -166,7 +166,7 @@ Total size: 0xC0 (192)
 | 0x09            | `U8`        | Key Type       | Constant value `6`
 | 0x0A            | `U8`        | Key Operation  | Constant value `0`
 | 0x0B            | `U8`        | Key Algorithm  | Constant value `0`
-| 0x0C            | `U32`       | Key Info       | DICE Device ID Key Info
+| 0x0C            | `U32`       | Key Info       | Device ID Key Info
 | 0x10            | `U32`       | Sign Key Info  | Application firmware Key Info
 | 0x14            | `BYTES[12]` | Validity       | Constant value `[0x0, 12]`
 | 0x20            | `U64`       | HW ID          | Unique ID of the Titan RoT
@@ -177,10 +177,10 @@ Total size: 0xC0 (192)
 | 0x34            | `U16`       | SVN            | Security version number of application firmware
 | 0x36            | `U16`       | Size           | Constant value `64`
 | 0x38            | `BYTES[8]`  | Reserved 1     | Constant value `[0x0, 8]`
-| 0x40            | `P256_INT`  | Public Key x   | ECP256 Public Key x component
-| 0x60            | `P256_INT`  | Public Key y   | ECP256 Public Key y component
-| 0x80            | `P256_INT`  | Signature r    | ECDSA Signature r component
-| 0xA0            | `P256_INT`  | Signature s    | ECDSA Signature s component
+| 0x40            | `P256_INT`  | Public Key x   | P256 Public Key x component
+| 0x60            | `P256_INT`  | Public Key y   | P256 Public Key y component
+| 0x80            | `P256_INT`  | Signature r    | P256 Signature r component
+| 0xA0            | `P256_INT`  | Signature s    | P256 Signature s component
 | 0xC0            | `SHA256`    | Firmware Hash  | Application firmware hash
 
 Total size: 0xE0 (224)
@@ -195,7 +195,7 @@ Total size: 0xE0 (224)
 | 0x09            | `U8`        | Key Type       | Constant value `8`
 | 0x0A            | `U8`        | Key Operation  | Constant value `0`
 | 0x0B            | `U8`        | Key Algorithm  | Constant value `0`
-| 0x0C            | `U32`       | Key Info       | DICE Alias Key Info
+| 0x0C            | `U32`       | Key Info       | Alias Key Info
 | 0x10            | `U32`       | FEK Key Info   | TPM FEK Key Info
 | 0x14            | `BYTES[12]` | Validity       | Constant value `[0x0, 12]`
 | 0x20            | `U64`       | HW ID          | Unique ID of the Titan RoT
@@ -208,9 +208,9 @@ Total size: 0xE0 (224)
 | 0x38            | `BYTES[8]`  | Reserved 1     | Constant value `[0x0, 8]`
 | 0x40            | `SHA256`    | Firmware Hash  | Application firmware hash
 | 0x60            | `SHA256`    | Qualified Name | Qualified name of FEK object in TPM
-| 0x80            | `P256_INT`  | Public Key x   | ECP256 Public Key x component
-| 0xA0            | `P256_INT`  | Public Key y   | ECP256 Public Key y component
-| 0xC0            | `P256_INT`  | Signature r    | ECDSA Signature r component
-| 0xE0            | `P256_INT`  | Signature s    | ECDSA Signature s component
+| 0x80            | `P256_INT`  | Public Key x   | P256 Public Key x component
+| 0xA0            | `P256_INT`  | Public Key y   | P256 Public Key y component
+| 0xC0            | `P256_INT`  | Signature r    | P256 Signature r component
+| 0xE0            | `P256_INT`  | Signature s    | P256 Signature s component
 
 Total size: 0x100 (256)
