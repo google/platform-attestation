@@ -1,4 +1,4 @@
-module titandice
+module github.com/google/platform-attestation/titan/dice/titandice
 
 go 1.24.4
 

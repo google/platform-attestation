@@ -19,8 +19,8 @@ import (
 	"os"
 
 	// Assuming these are the correct import paths
-	"scriberoots"
-	"titandice"
+	"github.com/google/platform-attestation/titan/dice/scriberoots"
+	"github.com/google/platform-attestation/titan/dice/titandice"
 )
 
 const (

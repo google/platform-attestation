@@ -1,10 +1,10 @@
-module titancertutil
+module github.com/google/platform-attestation/titan/dice/titancertutil
 
 go 1.24.8
 
 require (
-	scriberoots v0.0.0
-	titandice v0.0.0
+	github.com/google/platform-attestation/titan/dice/scriberoots v0.0.0
+	github.com/google/platform-attestation/titan/dice/titandice v0.0.0
 )
 
 require (
@@ -15,6 +15,6 @@ require (
 	google.golang.org/protobuf v1.36.10 // indirect
 )
 
-replace titandice => ../titandice
+replace github.com/google/platform-attestation/titan/dice/titandice => ../titandice
 
-replace scriberoots => ../scriberoots
+replace github.com/google/platform-attestation/titan/dice/scriberoots => ../scriberoots
