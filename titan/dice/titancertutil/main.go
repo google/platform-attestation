@@ -18,6 +18,8 @@ import (
 	"flag"
 	"fmt"
 	"os"
+
+	"github.com/google/platform-attestation/titan/dice/titancertutil"
 )
 
 // usage prints the general usage.
@@ -49,7 +51,7 @@ func runVerify(args []string) error {
 		verifyCmd.Usage()
 		return fmt.Errorf("--cert_chain_path is required")
 	}
-	return verifyCertChainFromFile(vf.certChainPath)
+	return titancertutil.VerifyCertChainFromFile(vf.certChainPath)
 }
 
 // runParse is a placeholder for the parse subcommand.

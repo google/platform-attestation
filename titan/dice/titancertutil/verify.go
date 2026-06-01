@@ -12,13 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package main
+package titancertutil
 
 import (
 	"fmt"
 	"os"
 
-	// Assuming these are the correct import paths
 	"github.com/google/platform-attestation/titan/dice/scriberoots"
 	"github.com/google/platform-attestation/titan/dice/titandice"
 )
@@ -77,8 +76,8 @@ func validateAndVerifyChain(certChainBytes []byte) error {
 	return nil
 }
 
-// verifyCertChainFromFile verifies the certificate chain read from the given file path.
-func verifyCertChainFromFile(certChainPath string) error {
+// VerifyCertChainFromFile verifies the certificate chain read from the given file path.
+func VerifyCertChainFromFile(certChainPath string) error {
 	certChainBytes, err := os.ReadFile(certChainPath)
 	if err != nil {
 		return fmt.Errorf("reading file %q: %w", certChainPath, err)
