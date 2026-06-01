@@ -370,6 +370,10 @@ func ReadDescriptorParts(r io.ReadSeeker) (DescriptorParts, error) {
 	dp.Hash = hash
 
 	// Parse optional blob
+	const maxBlobSize = 64 << 20 // 64 MiB - upper bound for ProdID token blobs (typically a few KB)
+	if dp.Descriptor.BlobSize > maxBlobSize {
+		return dp, fmt.Errorf("BlobSize %d exceeds maximum allowed size %d", dp.Descriptor.BlobSize, uint32(maxBlobSize))
+	}
 	if dp.Descriptor.BlobSize > 0 {
 		var blob *Blob
 		blob, err = ReadBlob(r, int(dp.Descriptor.BlobSize))
