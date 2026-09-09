@@ -11,5 +11,4 @@ require (
 require (
 	github.com/google/go-eventlog v0.0.3-0.20260520195024-af9e78c4d692 // indirect
 	golang.org/x/sys v0.42.0 // indirect
-	google.golang.org/protobuf v1.36.11 // indirect
 )
