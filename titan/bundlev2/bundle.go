@@ -9,7 +9,7 @@ import (
 	"io"
 	"os"
 
-	"github.com/google/platform-attestation/titan/titanheader/titanheader"
+	"github.com/google/platform-attestation/titan/titanheader"
 )
 
 // Titan SignedHeader magic values.

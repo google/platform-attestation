@@ -19,7 +19,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/google/platform-attestation/titan/dice/titancertutil/titancertutil"
+	"github.com/google/platform-attestation/titan/dice/titancertutil"
 )
 
 // usage prints the general usage.

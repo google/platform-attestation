@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/google/platform-attestation/titan/titanheader/titanheader"
+	"github.com/google/platform-attestation/titan/titanheader"
 )
 
 // =============================================================================

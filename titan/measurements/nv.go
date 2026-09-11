@@ -23,8 +23,8 @@ import (
 	"fmt"
 	"math/big"
 
-	apb "google3/third_party/confidential_space/server/proto/attestation_go_proto"
-	"google3/third_party/golang/github_com/google/go_tpm/v/v0/tpm2/tpm2"
+	apb "github.com/GoogleCloudPlatform/confidential-space/server/proto/gen/attestation"
+	"github.com/google/go-tpm/tpm2"
 )
 
 const (

@@ -8,9 +8,9 @@ import (
 	"io"
 	"os"
 
-	"github.com/google/platform-attestation/titan/bundlev2/bundlev2"
-	"github.com/google/platform-attestation/titan/descriptor/descriptor"
-	"github.com/google/platform-attestation/titan/titanheader/titanheader"
+	"github.com/google/platform-attestation/titan/bundlev2"
+	"github.com/google/platform-attestation/titan/descriptor"
+	"github.com/google/platform-attestation/titan/titanheader"
 )
 
 type firmwareType string

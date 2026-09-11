@@ -392,7 +392,6 @@ func ReadDescriptorParts(r io.ReadSeeker) (*DescriptorParts, error) {
 	} else {
 		sig, err = NewSignatureRSA(dp.Descriptor.VerificationScheme, 0, 0, 0, nil)
 	}
-	// LINT.ThenChange(//depot/google3/platforms/security/titan/gq/keyinfo.go)
 	if err != nil {
 		return dp, err
 	}

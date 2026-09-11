@@ -23,7 +23,7 @@ import (
 	"fmt"
 	"hash"
 
-	"google3/third_party/golang/github_com/google/go_tpm/v/v0/tpm2/tpm2"
+	"github.com/google/go-tpm/tpm2"
 )
 
 const p256ByteSize = 32

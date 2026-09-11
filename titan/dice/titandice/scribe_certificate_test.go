@@ -7,7 +7,7 @@ import (
 	"math/big"
 	"testing"
 
-	"google3/third_party/golang/cmp/cmp"
+	"github.com/google/go-cmp/cmp"
 )
 
 func TestParseScribeCertificate(t *testing.T) {
